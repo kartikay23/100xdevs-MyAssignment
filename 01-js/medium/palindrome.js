@@ -4,7 +4,19 @@
 */
 
 function isPalindrome(str) {
+  const str1 = str.toLowerCase();
+  let newstr = "";
+  let revstr = "";
+
+  for(let i=0; i< str1.length; i++) {
+    if(str1.charCodeAt(i) >= 97 && str1.charCodeAt(i) <= 122) {
+      newstr += str1[i];
+      revstr = str1[i] + revstr;  // this should be in this order. concat in rev
+    }
+  }
+  if(newstr === revstr)
   return true;
+return false;
 }
 
 module.exports = isPalindrome;
